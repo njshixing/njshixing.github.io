@@ -1,14 +1,12 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="apple-mobile-web-app-title" content="Password" />
 		<meta name="viewport" content="user-scalable=0, initial-scale=1.0">
 		<!--<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>-->
 		<meta name="format-detection" content="telephone=no">
-		<link rel="apple-touch-icon" href="http://7xj2y5.com1.z0.glb.clouddn.com/liu.png" /> 
 		<title>Password</title>
 		<link href="./css/style.css" rel="stylesheet">
 		<link rel="apple-touch-startup-image" href="img/iphone.png" />
@@ -24,7 +22,7 @@
 				$('#password').keyup(countCode);
 				$('#key').keyup(countCode);
 				/*百度接口根据IP获取当前地址*/
-				$.getJSON("http://api.map.baidu.com/location/ip?ak=huGDrrtkgteDGmZPE4EwiTNY&callback=?",function(data){ 
+				$.getJSON("https://api.map.baidu.com/location/ip?ak=huGDrrtkgteDGmZPE4EwiTNY&callback=?",function(data){ 
 					console.log(data); 
 					var x=document.getElementById("addr");
 					x.innerHTML="您的当前位置："+data.content.address;
@@ -44,7 +42,7 @@
 			/*百度天气接口*/
 			function weather(data) {
 				$.ajax({
-					url: 'http://api.map.baidu.com/telematics/v3/weather?location='+data.content.address_detail.city+'&output=json&ak=huGDrrtkgteDGmZPE4EwiTNY',
+					url: 'https://api.map.baidu.com/telematics/v3/weather?location='+data.content.address_detail.city+'&output=json&ak=huGDrrtkgteDGmZPE4EwiTNY',
 					type: 'get',
 					dataType: 'jsonp',
 					//jsonp: 'jsoncallback',
@@ -67,13 +65,12 @@
 	<input id="password" type="password" class="input" />
 	<input id="key" "type="text" class="input" /> 
 	<input id="code16" "type="text" class="inputFinalCode" /> 
-<!--<input id="copyPassword" type="button" class="loginbutton" value="copy" />-->
+	<input id="newCode16" "type="text" class="inputFinalCode" /> 
 </form>
-</br></br></br></br>
-<a href="http://raulism.gitcafe.io">Click here to my blog</a>
+</br></br>
+<a href="http://raulism.github.io">Click here to my blog</a>
 </br>
-<a href="sms:18013981117">Send me SMS</a>
-</br></br></br></br>
+</br>
 <small id="addr" class="plug">您的当前位置：</small>
 </br>
 <small id="todayweather" class="plug">今日天气：</small>

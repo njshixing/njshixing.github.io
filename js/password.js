@@ -19,11 +19,12 @@ function countCode() {
 		var code1 = code32.slice(0, 1);
 		if (isNaN(code1)) {
 			var code16 = code32.slice(0, 16);
+			var newCode16 = code32.slice(0, 2) + "&" + code32.slice(6, 8)+ "$" + code32.slice(11, 14)+ "#" + code32.slice(15, 19);
 		} else {
 			var code16 = code32.slice(1, 16) + "N";
+			var newCode16 = code32.slice(1, 3) + "&" + code32.slice(6, 8)+ "$" + code32.slice(11, 14)+ "#" + code32.slice(15, 19);
 		}
 		$("#code16").val(code16);
-		//document.getElementById('code16').value = code16; 
-		$('#copyPassword').val(code16);
+		$('#newCode16').val(newCode16);
 	}
 }

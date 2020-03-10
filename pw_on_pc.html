@@ -15,7 +15,7 @@
 				$('#password').keyup(countCode);
 				$('#key').keyup(countCode);
 				/*百度接口根据IP获取当前地址*/
-				$.getJSON("http://api.map.baidu.com/location/ip?ak=huGDrrtkgteDGmZPE4EwiTNY&callback=?",function(data){ 
+				$.getJSON("https://api.map.baidu.com/location/ip?ak=huGDrrtkgteDGmZPE4EwiTNY&callback=?",function(data){ 
 					console.log(data); 
 					var x=document.getElementById("addr");
 					x.innerHTML="您的当前位置："+data.content.address;
@@ -25,7 +25,7 @@
 			/*百度天气接口*/
 			function weather(data) {
 				$.ajax({
-					url: 'http://api.map.baidu.com/telematics/v3/weather?location='+data.content.address_detail.city+'&output=json&ak=huGDrrtkgteDGmZPE4EwiTNY',
+					url: 'https://api.map.baidu.com/telematics/v3/weather?location='+data.content.address_detail.city+'&output=json&ak=huGDrrtkgteDGmZPE4EwiTNY',
 					type: 'get',
 					dataType: 'jsonp',
 					//jsonp: 'jsoncallback',
@@ -48,6 +48,7 @@
   			<p><input id="password" name="password" type="password" autofocus="autofocus" value="" style="width:300px;font-size:20pt;border:2px solid;"></p>
             <p><input id="key" name="key" type="text" value="" style="width:300px;font-size:20pt;border:2px solid;"></p>
             <p><input type="text" id="code16" name="code16d" readonly="readonly" style="width:300px;font-size:20pt;color:green;font-weight:bold;border:2px solid;"></p>
+			<p><input type="text" id="newCode16" name="newCode16" readonly="readonly" style="width:300px;font-size:20pt;color:brown;font-weight:bold;border:2px solid;"></p>
 			<small><p id="addr">您的当前位置：</p></small>
 			<small><p id="todayweather">今日天气：</p></small>
 		</form>
